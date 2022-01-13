@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+//entity and table indicate connection to database
 @Entity
 @Table
 public class Student {
-
+    //sequence generator for assigning id like 1,2,3 and so on
     @Id
     @SequenceGenerator(
             name="student_sequence",
@@ -24,6 +25,7 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
+//@Transient is ignored by mapping framework and the field not mapped to any database column
     @Transient
     private Integer age;
 

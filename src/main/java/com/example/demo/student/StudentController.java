@@ -4,14 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//rest controller annotation makes this class able to serve rest endpoints
 @RestController
 @RequestMapping(path = "api/v1/student")
+//this class contains all the API's(API Layer)
+//API layer is the topmost layer
 public class StudentController {
 
     private final StudentService studentService;
 
     @Autowired
+    //annotation for injecting bean of StudentService
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }

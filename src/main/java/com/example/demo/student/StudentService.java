@@ -9,17 +9,20 @@ import java.time.Month;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
+//service layer-this class contains all the business logic
+//it is between the API layer and Database Layer
 @Service
 public class StudentService {
 
     private final StudentRepository studentRepository;
 
     @Autowired
+    //annotation for injecting bean of StudentRepository
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
+    //many database manipulation methods are available for studentRepository since it extends JPA repository
     public List<Student> getStudents() {
         return studentRepository.findAll();
     }
